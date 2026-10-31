@@ -121,7 +121,7 @@ const SUPABASE_ANON_KEY = "sb_publishable_2JRALtUH5kzMw2D-8ZaI9g_nlqperny";
 let db = null, currentUser = null, currentShop = null, authMode = "signup";
 const $ = id => document.getElementById(id);
 const sections = ["home","authPanel","setupPanel","paymentPanel","dashboard","storePage"];
-function configured(){return SUPABASE_URL.startsWith("https://") && SUPABASE_URL.includes("supabase.co") && SUPABASE_ANON_KEY.length>20 && !SUPABASE_ANON_KEY.toLowerCase().includes("service_role") && !SUPABASE_ANON_KEY.toLowerCase().includes("secret") && !SUPABASE_URL.includes("ضع_") && !SUPABASE_ANON_KEY.includes("ضع_")}
+function configured(){return SUPABASE_URL.startsWith("https://") && SUPABASE_URL.includes("supabase.co") && SUPABASE_ANON_KEY.length>20 && !SUPABASE_ANON_KEY.toLowerCase().includes("service_role") && !SUPABASE_ANON_KEY.toLowerCase().includes("secret") && !SUPABASE_URL.includes("_") && !SUPABASE_ANON_KEY.includes("ضع_")}
 function connectSupabase(){
  if(!configured()) return false;
  db=window.supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY);
